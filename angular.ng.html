@@ -1,0 +1,98 @@
+
+    <div class="all" ng-controller = "mainCtrl">
+            <div class="row topBar">
+                <div class="col-md-6 col-md-offset-2">
+        <form class = "inputForm">
+            <div class="input-field">
+        <input type="text" ng-model = "zip" class = "validate" id="zip">
+        <label for="zip"> Enter your zip code to begin and hit enter</label>
+        </div>
+        <button ng-click = "search()" id = "submitBtn"> Click it</button>
+        </form>
+        </div>
+        </div>
+        <div class="info">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+            <div class = "name text-center"> </div>
+            </div>
+        </div>
+        <div class="row">
+             <div class="col-md-5 col-md-offset-1">
+
+                    <div class = "bills">
+                        <h3>Bills Sponsored</h3>
+                     </div>
+                </div>
+                    <div class="col-md-5">
+            <div class="comitStuff">
+                <h3>Committees</h3>
+                        <div class="mainCommittee">
+                        </div>
+            </div>
+                    </div>
+
+        </div>
+        </div>
+
+
+        <div class="containMoney">
+        <div class="row text-center money">
+            <div>
+                    <h5> This congress person recieved {{total | currency}} dollars in the 2014 campaign cycle.</h5>
+                </div>
+                <div>
+                    <h5> {{hmmP}} people gave this congressmen this amount of money.</h5>
+                </div>
+        </div>
+        <div class="row">
+        <div class="money">
+        <div class="col-md-5 col-md-offset-1">
+                <div class="topContributors">
+                    <h3>Top Contributors for 2012 cycle: </h3>
+                    <div class="col-md-8">
+                    <li ng-repeat = "value in contribNames track by $index"> {{value}}</li>
+                    </div>
+                    <div class="col-md-4">
+                        <li ng-repeat = "stuff in contribTotals track by $index"> {{stuff | currency}}</li>
+                    </div>
+
+                    
+                </div> 
+                 </div>
+                <div class="col-md-5">               
+                <div class="entity">
+                    <h3>Interesting Data</h3>
+                    <div class="col-md-6">
+                        <li ng-repeat = "ughn in entityType track by $index">
+                            {{ughn}}
+                        </li>
+                    </div>
+                    <div class="col-md-6">
+                        <li ng-repeat = "money in entityTotal track by $index">
+                            {{money | currency}}
+                        </li>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
+            <div class="button">
+                <button class="reset" ng-click = 'reset()'> Try again.</button>
+            </div>
+            </div>
+        </div>
+        <div class="recents">
+            <h4> Recent Searches</h4>
+            <div ng-repeat = "something in retainedData track by $index">
+                <p>{{something.name}} -- from district {{something.district}} in {{something.state}}</p>
+            </div>
+       
+       </div>
+        </div>
+
+
+
