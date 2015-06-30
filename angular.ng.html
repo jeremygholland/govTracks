@@ -15,22 +15,34 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
             <div class = "name text-center"> 
-                <h3> <a href="'{{$storage.contact}}'"> {{$storage.firsties}} {{$storage.lasties}} ({{$storage.party}}) {{$storage.state}}</a></h3>
+                <h3> <a href="'{{$storage.contact}}'" ng-show = "$storage.bills"> {{$storage.firsties}} {{$storage.lasties}} ({{$storage.party}}) {{$storage.state}}</a></h3>
             </div>
             </div>
         </div>
         <div class="row">
-             <div class="col-md-5 col-md-offset-1" ng-show = "$storage.bills">
-
-                    <div class = "bills">
-                        <h3>Bills Sponsored</h3>
+             <div class="col-md-6" ng-show = "$storage.bills">
+                    <div class = "text-center">
+                        <h3 class = "bills text-center">Bills Sponsored</h3>
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div ng-repeat = "ba in $storage.billStuff track by $index">
+                        <ul> <a href="{{ba}}"> Bill </a></ul>
+                        </div>
+                        </div>
+                        <div class="col-md-8">
+                        <div ng-repeat = "fa in $storage.shortTitle track by $index">
+                            <ul>{{fa}}</ul>
+                        </div>
+                        </div>
+                        </div>
                      </div>
                 </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
             <div class="comitStuff" ng-show = "$storage.comitStuff">
-                <h3>Committees</h3>
-                        <div class="mainCommittee">
-                        </div>
+                <h3 class = "text-center">Committees</h3>
+                    <div class="mainCommittee" ng-repeat = "kd in $storage.committees track by $index">
+                       <li>{{kd}}</li>
+                    </div>
             </div>
                     </div>
 
@@ -93,9 +105,6 @@
                 <p>{{something.name}} -- from district {{something.district}} in {{something.state}}</p>
             </div>
        
-       </div>
-       <div class="reset">
-           <button ng-click = "resetIt()"> reset it, development</button>
        </div>
         </div>
 

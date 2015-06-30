@@ -41,6 +41,10 @@ $scope.$storage = $localStorage.$default({
   firsties: '',
   party:'',
   comitStuff: false,
+  bill: [],
+  billStuff: [],
+  shortTitle: [],
+  committees: [],
 
 
 
@@ -102,18 +106,15 @@ console.log($scope.$storage.zip);
               $scope.$storage.bills = true;
               for(j=0; j<json.results.length; j++){
                 if(json.results[j].congress == '114'){
-                var bills = json.results[j].bill_id; 
-                var shortTitle = json.results[j].short_title;
-                var link = json.results[j].last_version.urls.pdf;
-                $('.bills').append('<li> '+bills+' <a href = '+ link +'> '+ shortTitle+'</a></li>');
-
+                 $scope.$storage.bill.push(json.results[j].bill_id); 
+                $scope.$storage.shortTitle.push(json.results[j].short_title);
+                $scope.$storage.billStuff.push(json.results[j].last_version.urls.pdf);
                 }
               }
             })
             $.getJSON('http://congress.api.sunlightfoundation.com/committees?member_ids='+id+'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
               for(w = 0; w<json.results.length; w++){
-                  var committees= json.results[w].name;
-                $('.mainCommittee').append('<li>'+committees+'</li>');
+                  $scope.$storage.committees.push(json.results[w].name);
               }
             })
             //&callback=?
@@ -126,7 +127,7 @@ console.log($scope.$storage.zip);
               $timeout(function() { 
                 total.push(json[0].total_received);
               }, 2000);
-            $.getJSON('http://transparencydata.com/api/1.0/aggregates/pol/'+newID+'/contributors.json?cycle=2014&limit=40&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
+            $.getJSON('http://transparencydata.com/api/1.0/aggregates/pol/'+newID+'/contributors.json?cycle=2014&limit=10&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
               for(y = 0; y<json.length; y++){
                 var contribName = json[y].name;
                 var contribTotal = json[y].total_amount;
@@ -138,7 +139,7 @@ console.log($scope.$storage.zip);
 
             })
 
-            $.getJSON('http://transparencydata.com/api/1.0/aggregates/pol/'+newID+'/contributors/industries.json?cycle=2014&limit=30&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
+            $.getJSON('http://transparencydata.com/api/1.0/aggregates/pol/'+newID+'/contributors/industries.json?cycle=2014&limit=10&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
               for(u = 0; u<json.length; u++){
                 entityTotal.push(json[u].amount);
                  entityType.push(json[u].name);
@@ -190,6 +191,10 @@ $scope.$storage.reset= true;
     $scope.$storage.entityTotal = '';
     $scope.$storage.contribNames= '';
     $scope.$storage.contribTotals= '';
+    $scope.$storage.bill = [];
+    $scope.$storage.shortTitle = [];
+    $scope.$storage.committees = [];
+    $scope.$storage.billStuff = [];
     $scope.$storage.hmm ='';
     $scope.$storage.hmmP = '';
     $scope.$storage.money = false;
