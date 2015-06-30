@@ -28,6 +28,20 @@ $scope.$storage = $localStorage.$default({
   recents: false,
   reset: false,
   money: false,
+  entityTotal: [],
+  entityType: [],
+  contribNames:'',
+  contribTotals:'',
+  total: '',
+  hmmP: '',
+  name: '',
+  state: '',
+  contact:'',
+  lasties: '',
+  firsties: '',
+  party:'',
+  comitStuff: false,
+
 
 
 });
@@ -40,7 +54,6 @@ console.log($scope.$storage.zip);
     $scope.inputForm = false;
     $('.tabStuff').show();
     $scope.$storage.button = true;
-    $scope.hidden = true;
     if(retainedData.length <1){
       $scope.$storage.recents = false;
     }
@@ -55,8 +68,8 @@ console.log($scope.$storage.zip);
      contribNames = [];
     var contribTotals= [];
     var total = []
-    $scope.contribNames;
-    $scope.contribTotals;
+    $scope.$storage.contribNames;
+    $scope.$storage.contribTotals;
     $scope.total = total[0];
     $('.name').html('');
     $.getJSON("http://congress.api.sunlightfoundation.com/legislators/locate?zip="+$scope.zip+"&apikey=8b48c930d6bb4552be3b0e6248efb463").then(function (json){
@@ -68,37 +81,23 @@ console.log($scope.$storage.zip);
           var state = json.results[i].state;
         $('.name').append("<td> <button id = "+district+"> "+district+"</button> </td> <td> <h4>"+firstName+" "+lastName+ "</h4> </td>");
         $('#'+district).click(function(event){
-          $('.name').html('');
-          $scope.$storage.comitStuff = true;
+          $scope.$storage.hidden = false;
           var newSearch = (event.target.id);
           $.getJSON('http://congress.api.sunlightfoundation.com/legislators?state='+state+'&district='+newSearch+'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
             var firsties = json.results[0].first_name;
             var lasties = json.results[0].last_name;
             var party = json.results[0].party;
             var id = json.results[0].bioguide_id;
-            var contact = json.results[0].contact_form;
-            $scope.collect = {
-              name: firsties+' '+lasties,
-            district: newSearch,
-            state: state,
-            id: id
-          }
-          if(retainedData.length == 0){
-            retainedData.push($scope.collect);
-          }
-          for(j = 0; j<retainedData.length; j++){
-              if (retainedData[j].id == id){
-                console.log("suck it again, man");
-                retainedData.slice(retainedData.indexOf(retainedData[j]), 2);
-              }
-              else{
-                 retainedData.push($scope.collect);
-                 console.log(retainedData.length);
-              }
-            }
-            console.log(retainedData);
-            console.log(id);
-            $('.name').html("<h2> <a href ="+contact+">" + firsties +" "+ lasties + "("+party+"), "+state+"</a></h2>");
+            $timeout(function() {
+                $scope.$storage.contact = json.results[0].contact_form;
+                $scope.$storage.firsties =firsties;
+                $scope.$storage.lasties= lasties;
+                $scope.$storage.district=  newSearch;
+                $scope.$storage.state= state;
+                $scope.$storage.party = party;
+              }, 1000);
+            $('.name').html("<h3> <a href ="+$scope.$storage.contact+">" + firsties +" "+ lasties + "("+party+"), "+state+"</a></h3>");
+            $scope.$storage.comitStuff = true;
             $.getJSON('http://congress.api.sunlightfoundation.com/bills?sponsor_id='+id +'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
               $scope.$storage.bills = true;
               for(j=0; j<json.results.length; j++){
@@ -106,7 +105,8 @@ console.log($scope.$storage.zip);
                 var bills = json.results[j].bill_id; 
                 var shortTitle = json.results[j].short_title;
                 var link = json.results[j].last_version.urls.pdf;
-                $('.bills').append('<li>' + bills + ' <ul> <a href = '+ link +'> '+ shortTitle+'</a></ul></li>');
+                $('.bills').append('<li> '+bills+' <a href = '+ link +'> '+ shortTitle+'</a></li>');
+
                 }
               }
             })
@@ -133,8 +133,8 @@ console.log($scope.$storage.zip);
                 contribNames.push(contribName);
                 contribTotals.push(contribTotal)
                 }
-                $scope.contribNames= contribNames;
-                $scope.contribTotals= contribTotals;
+                $scope.$storage.contribNames= contribNames;
+                $scope.$storage.contribTotals= contribTotals;
 
             })
 
@@ -143,14 +143,14 @@ console.log($scope.$storage.zip);
                 entityTotal.push(json[u].amount);
                  entityType.push(json[u].name);
               }
-              $scope.entityType = entityType;
-              $scope.entityTotal = entityTotal;
+              $scope.$storage.entityType = entityType;
+              $scope.$storage.entityTotal = entityTotal;
             })
             $.getJSON('http://transparencydata.com/api/1.0/entities/'+newID+'.json?cycle=2014&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
                 var hmm =json.totals['2014'].recipient_amount;
                 var hmmP = json.totals['2014'].recipient_count;
-                $scope.total = hmm;
-                $scope.hmmP = hmmP;
+                $scope.$storage.total = hmm;
+                $scope.$storage.hmmP = hmmP;
               });
           })
           })
@@ -163,7 +163,6 @@ $scope.$storage.reset= true;
 }
   $scope.reset = function(){
     $scope.zip = '';
-    $('.inputForm').show();
     $('.name').html('');
     $('.bills').html('');
     $('.mainCommittee').html('');
@@ -188,19 +187,23 @@ $scope.$storage.reset= true;
     var total = [];
     var contribName = '';
     var contribTotal = '';
-    $scope.entityType = '';
-    $scope.entityTotal = '';
-    $scope.contribNames= '';
-    $scope.contribTotals= '';
-    $scope.hmm ='';
-    $scope.hmmP = '';
+    $scope.$storage.entityType = '';
+    $scope.$storage.entityTotal = '';
+    $scope.$storage.contribNames= '';
+    $scope.$storage.contribTotals= '';
+    $scope.$storage.hmm ='';
+    $scope.$storage.hmmP = '';
     $scope.$storage.money = false;
     $scope.$storage.bills = false;
     $scope.$storage.comitStuff = false;
     $scope.$storage.recents = false;
     $scope.$storage.reset= false;
-  }
+    $scope.$storage.hidden = true;
 
+  }
+  $scope.resetIt = function(){
+$localStorage.$reset();
+}
 }])
 }
 
