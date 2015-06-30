@@ -5,8 +5,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 urigo:angular
-twbs:bootstrap
 fourseven:scss
+gsklee:ngstorage
+mrt:bootstrap-3

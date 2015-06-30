@@ -2,9 +2,9 @@ Recent = new Mongo.Collection("recent");
 
 if (Meteor.isClient) {
 
-  
+
   Meteor.subscribe("recent");
- var app = angular.module('app', ['angular-meteor']);
+ var app = angular.module('app', ['ngStorage', 'angular-meteor']);
  app.factory('newService', function(){
   retainedData = [];
 
@@ -20,29 +20,32 @@ if (Meteor.isClient) {
     }
   };
  })
-app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', function($scope, $timeout, $meteor, newService){
+app.controller('mainCtrl', ['$scope', '$localStorage', '$timeout', '$meteor', 'newService', function($scope, $localStorage, $timeout, $meteor, newService){
 
-  $scope.hidden = false;
-  $('.tabStuff').hide();
-  $('.recents').hide();
-  $('.reset').hide();
-  $('.money').hide();
-  $('.comitStuff').hide();
-  $('.bills').hide();
-  $('.button').hide();
+$scope.$storage = $localStorage.$default({
+  zip : '',
+  hidden: true,
+  recents: false,
+  reset: false,
+  money: false,
+
+
+});
+console.log($scope.$storage.zip);
 
   $scope.search = function(){
+    $scope.$storage.zip = $scope.zip;
     newService.getData();
   $scope.retainedData = retainedData;
-    $('.inputForm').hide();
+    $scope.inputForm = false;
     $('.tabStuff').show();
-    $('.button').show();
+    $scope.$storage.button = true;
     $scope.hidden = true;
     if(retainedData.length <1){
-      $('.recents').hide();
+      $scope.$storage.recents = false;
     }
     else{
-    $('.recents').show();
+    $scope.$storage.recents = true;
     }
     var entityTotal= [];
     var entityType = [];
@@ -56,7 +59,6 @@ app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', funct
     $scope.contribTotals;
     $scope.total = total[0];
     $('.name').html('');
-    console.log($scope.zip);
     $.getJSON("http://congress.api.sunlightfoundation.com/legislators/locate?zip="+$scope.zip+"&apikey=8b48c930d6bb4552be3b0e6248efb463").then(function (json){
       for(var i = 0; i< json.results.length; i++){
         if(json.results[i].chamber == "house"){
@@ -67,7 +69,7 @@ app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', funct
         $('.name').append("<td> <button id = "+district+"> "+district+"</button> </td> <td> <h4>"+firstName+" "+lastName+ "</h4> </td>");
         $('#'+district).click(function(event){
           $('.name').html('');
-          $('.comitStuff').show();
+          $scope.$storage.comitStuff = true;
           var newSearch = (event.target.id);
           $.getJSON('http://congress.api.sunlightfoundation.com/legislators?state='+state+'&district='+newSearch+'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
             var firsties = json.results[0].first_name;
@@ -98,7 +100,7 @@ app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', funct
             console.log(id);
             $('.name').html("<h2> <a href ="+contact+">" + firsties +" "+ lasties + "("+party+"), "+state+"</a></h2>");
             $.getJSON('http://congress.api.sunlightfoundation.com/bills?sponsor_id='+id +'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
-              $('.bills').show();
+              $scope.$storage.bills = true;
               for(j=0; j<json.results.length; j++){
                 if(json.results[j].congress == '114'){
                 var bills = json.results[j].bill_id; 
@@ -116,7 +118,7 @@ app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', funct
             })
             //&callback=?
             $.getJSON('http://transparencydata.com/api/1.0/entities.json?search='+firsties+'+'+lasties+'&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
-              $('.money').show();
+              $scope.$storage.money = true;
               var newID = json[0].id;
               var totalP = json[0].count_received;
               $('.totalP').html(totalP);
@@ -129,9 +131,11 @@ app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', funct
                 var contribName = json[y].name;
                 var contribTotal = json[y].total_amount;
                 contribNames.push(contribName);
+                contribTotals.push(contribTotal)
                 }
                 $scope.contribNames= contribNames;
                 $scope.contribTotals= contribTotals;
+
             })
 
             $.getJSON('http://transparencydata.com/api/1.0/aggregates/pol/'+newID+'/contributors/industries.json?cycle=2014&limit=30&callback=?&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
@@ -155,7 +159,7 @@ app.controller('mainCtrl', ['$scope', '$timeout', '$meteor', 'newService', funct
       }
     }
   })
-$('.reset').show();
+$scope.$storage.reset= true;
 }
   $scope.reset = function(){
     $scope.zip = '';
@@ -190,12 +194,11 @@ $('.reset').show();
     $scope.contribTotals= '';
     $scope.hmm ='';
     $scope.hmmP = '';
-    $('.money').hide();
-    $('.tabStuff').hide();
-    $('.bills').hide();
-    $('.comitStuff').hide();
-    $('.recents').hide();
-    $('.button').hide();
+    $scope.$storage.money = false;
+    $scope.$storage.bills = false;
+    $scope.$storage.comitStuff = false;
+    $scope.$storage.recents = false;
+    $scope.$storage.reset= false;
   }
 
 }])
