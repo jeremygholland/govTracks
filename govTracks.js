@@ -164,7 +164,6 @@ $scope.$storage.reset= true;
   $scope.reset = function(){
     $scope.zip = '';
     $('.name').html('');
-    $('.bills').html('');
     $('.mainCommittee').html('');
     var firsties = '';
     var lasties = '';
