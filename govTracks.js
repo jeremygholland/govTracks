@@ -45,8 +45,7 @@ $scope.$storage = $localStorage.$default({
   billStuff: [],
   shortTitle: [],
   committees: [],
-
-
+  partyClass:''
 
 });
 console.log($scope.$storage.zip);
@@ -91,6 +90,7 @@ console.log($scope.$storage.zip);
     $scope.$storage.recents = false;
     $scope.$storage.reset= false;
     $scope.$storage.hidden = true;
+    $scope.$storage.partyClass= '';
 
 
 
@@ -129,7 +129,7 @@ console.log($scope.$storage.zip);
           var firstName = json.results[i].first_name;
           var lastName = json.results[i].last_name;
           var state = json.results[i].state;
-        $('.name').append("<td> <button id = "+district+"> "+district+"</button> </td> <td> <h4>"+firstName+" "+lastName+ "</h4> </td>");
+        $('.name').append("<div> <button id = "+district+"> "+district+"</button> </td> <td> <h4>"+firstName+" "+lastName+ "</h4> </div>");
         $('#'+district).click(function(event){
           $scope.$storage.hidden = false;
           var newSearch = (event.target.id);
@@ -137,6 +137,13 @@ console.log($scope.$storage.zip);
             var firsties = json.results[0].first_name;
             var lasties = json.results[0].last_name;
             var party = json.results[0].party;
+            console.log(party);
+            if(party == 'R'){
+            $scope.$storage.partyClass = "repub"
+          }
+          else{
+            $scope.$storage.partyClass ="dem";
+          }
             var id = json.results[0].bioguide_id;
             $timeout(function() {
                 $scope.$storage.contact = json.results[0].contact_form;
@@ -146,7 +153,7 @@ console.log($scope.$storage.zip);
                 $scope.$storage.state= state;
                 $scope.$storage.party = party;
               }, 1000);
-            $('.name').html("<h3> <a href ="+$scope.$storage.contact+">" + firsties +" "+ lasties + "("+party+"), "+state+"</a></h3>");
+            $('.name').html('');
             $scope.$storage.comitStuff = true;
             $.getJSON('http://congress.api.sunlightfoundation.com/bills?sponsor_id='+id +'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
               $scope.$storage.bills = true;
@@ -156,8 +163,9 @@ console.log($scope.$storage.zip);
                 $scope.$storage.shortTitle.push(json.results[j].short_title);
                 var billStuff = json.results[j].last_version.urls.pdf;
                 console.log(billStuff);
-                if(billStuff == null){
+                if($scope.$storage.bill.length < 1){
                   $scope.$storage.billStuff.push('This individual has not sponsored any bills yet this session');
+                  alrert($scope.$storage.billStuff);
                 }
                 else{
                 $scope.$storage.billStuff.push(billStuff);

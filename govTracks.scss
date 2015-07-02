@@ -4,13 +4,70 @@
 .topBar{background-color: #e8eaf6}
 .info{background-color: #e8eaf6;
 	height:100%}
-.containMoney{background-color: #c5e1a5;
-}
+
 .tabThing{
 	width: 30vw;
 	margin-left: 10%;}
 nav{
+	background: -webkit-linear-gradient(left, #f44336 , white, #2196f3); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #f44336, white, #2196f3); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #f44336, white, #2196f3);
+     background: linear-gradient(to right, #f44336 , white, #2196f3);
+     input::-webkit-input-placeholder{
+		color:white;
+     }
+
+	input:focus{
+		color: white;
+		text-shadow: 2px 2px 2px black;
+	}
+	.titleName{
+		text-shadow: 2px 2px 2px black;
+	}
 	a:hover{
 		text-decoration: none;
 	}
+	.searchedFor{
+		margin-right: 10%;
+	}
+}
+.bidness{
+	p{
+	font-size: 1.2em;
+	}
+	background: -webkit-linear-gradient(left, #f44336 , white); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #f44336, white); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #f44336, white);
+     background: linear-gradient(to right, #f44336 , white);
+}
+.containMoney{
+	background: -webkit-linear-gradient(left, white , #2196f3); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, white, #2196f3); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, white, #2196f3);
+     background: linear-gradient(to right, white, #2196f3);
+}
+
+.card{
+	text-shadow: 1px 1px 1px white;
+	a{
+		text-shadow: none;
+	}
+}
+
+.dem{
+	color: #2196f3;
+}
+.repub{
+	color: #f44336;
+}
+.topCard{
+	button{
+		color:black;
+	}
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	background: -webkit-linear-gradient(left, #f44336 , white, #2196f3); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #f44336, white, #2196f3); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #f44336, white, #2196f3);
+     background: linear-gradient(to right, #f44336 , white, #2196f3);
 }

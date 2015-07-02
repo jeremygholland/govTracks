@@ -1,8 +1,10 @@
 
     <div class="all" ng-controller = "mainCtrl">
-             <nav>
+        <div class="navbar-fixed">
+             <nav class = "z-depth-2">
     <div class="nav-wrapper">
-      <a class="brand-logo center titleName">GovTracks</a>
+      <a class="brand-logo right searchedFor">GovTracks</a>
+      <a class = "brand-logo center titleName"> {{$storage.firsties}} {{$storage.lasties}} <span class = "{{$storage.partyClass}}">({{$storage.party}})</span> {{$storage.state}} </a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         
         <li class = "tabThing">
@@ -14,42 +16,40 @@
       </ul>
     </div>
   </nav>
+</div>
 
-            <div class="row topBar">
-                <div class="col-md-6 col-md-offset-2">
-        </div>
-        </div>
-        <div class="info">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+        <div class="info" ng-show = "$storage.hidden">
+        <div class="row card topCard">
+            <div class="col-md-6 col-md-offset-3 card-content">
             <div class = "name text-center"> 
-                <h3> <a href="'{{$storage.contact}}'" ng-show = "$storage.bills"> {{$storage.firsties}} {{$storage.lasties}} ({{$storage.party}}) {{$storage.state}}</a></h3>
             </div>
             </div>
         </div>
-        <div class="row">
-             <div class="col-md-6" ng-show = "$storage.bills">
-                    <div class = "text-center">
+    </div>
+        <div class="card z-depth-2 bidness" ng-show = "$storage.bills">
+        <div class="row card-content">
+             <div class="col-md-6">
+                    <div class = "text-left">
                         <h3 class = "bills text-center">Bills Sponsored</h3>
                         <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-2 col-md-offset-2">
                             <div ng-repeat = "ba in $storage.billStuff track by $index">
-                        <ul> <a href="{{ba}}"> Bill </a></ul>
+                        <ul> <p> <a href="{{ba}}"> Bill </a> </p></ul>
                         </div>
                         </div>
                         <div class="col-md-8">
                         <div ng-repeat = "fa in $storage.shortTitle track by $index">
-                            <ul>{{fa}}</ul>
+                            <ul><p>{{fa}} </p></ul>
                         </div>
                         </div>
                         </div>
                      </div>
                 </div>
                     <div class="col-md-6">
-            <div class="comitStuff" ng-show = "$storage.comitStuff">
-                <h3 class = "text-center">Committees</h3>
+            <div class="comitStuff text-left" ng-show = "$storage.comitStuff">
+                <h3>Committees</h3>
                     <div class="mainCommittee" ng-repeat = "kd in $storage.committees track by $index">
-                       <li>{{kd}}</li>
+                       <li><p>{{kd}} </p></li>
                     </div>
             </div>
                     </div>
@@ -58,7 +58,8 @@
         </div>
 
 
-        <div class="containMoney" ng-show = "$storage.money">
+        <div class="containMoney card z-depth-2" ng-show = "$storage.money">
+            <div class="card-content">
         <div class="row text-center money">
             <div>
                     <h5> This congress person recieved {{$storage.total | currency}} dollars in the 2014 campaign cycle.</h5>
@@ -71,12 +72,12 @@
         <div class="money">
         <div class="col-md-5 col-md-offset-1">
                 <div class="topContributors">
-                    <h3>Top Contributors for 2012 cycle: </h3>
+                    <h3>Top Contributors in 2014 </h3>
                     <div class="col-md-8">
-                    <li ng-repeat = "value in $storage.contribNames track by $index"> {{value}}</li>
+                    <li ng-repeat = "value in $storage.contribNames track by $index"> <p>{{value}} </p></li>
                     </div>
                     <div class="col-md-4">
-                        <li ng-repeat = "stuff in $storage.contribTotals track by $index"> {{stuff | currency}}</li>
+                        <li ng-repeat = "stuff in $storage.contribTotals track by $index"> <p>{{stuff | currency}} </p></li>
                     </div>
 
                     
@@ -87,12 +88,12 @@
                     <h3>Interesting Data</h3>
                     <div class="col-md-6">
                         <li ng-repeat = "ughn in $storage.entityType track by $index">
-                            {{ughn}}
+                           <p> {{ughn}}</p>
                         </li>
                     </div>
                     <div class="col-md-6">
                         <li ng-repeat = "money in $storage.entityTotal track by $index">
-                            {{money | currency}}
+                           <p> {{money | currency}}</p>
                         </li>
                     </div>
                 </div>
@@ -100,6 +101,8 @@
             </div>
             </div>
             </div>
+            </div>
+
         <div class="recents" ng-show = "$storage.recents">
             <h4> Recent Searches</h4>
             <div ng-repeat = "something in retainedData track by $index">
