@@ -52,6 +52,52 @@ $scope.$storage = $localStorage.$default({
 console.log($scope.$storage.zip);
 
   $scope.search = function(){
+    $('.name').html('');
+    $('.mainCommittee').html('');
+    var firsties = '';
+    var lasties = '';
+    var party = '';
+    var id = '';
+    var contact = '';
+    var bills = ''; 
+    var shortTitle = '';
+    var link = '';
+    var committees= '';
+    var newID = '';
+    var totalP = '';
+    var entityTotal= [];
+    var entityType = [];
+    var id;
+    var lasties;
+    var firsties;
+    var contribNames = [];
+    var contribTotals= [];
+    var total = [];
+    var contribName = '';
+    var contribTotal = '';
+    $scope.$storage.entityType = '';
+    $scope.$storage.entityTotal = '';
+    $scope.$storage.contribNames= '';
+    $scope.$storage.contribTotals= '';
+    $scope.$storage.bill = [];
+    $scope.$storage.shortTitle = [];
+    $scope.$storage.committees = [];
+    $scope.$storage.billStuff = [];
+    $scope.$storage.hmm ='';
+    $scope.$storage.hmmP = '';
+    $scope.$storage.money = false;
+    $scope.$storage.bills = false;
+    $scope.$storage.comitStuff = false;
+    $scope.$storage.recents = false;
+    $scope.$storage.reset= false;
+    $scope.$storage.hidden = true;
+
+
+
+
+
+
+
     $scope.$storage.zip = $scope.zip;
     newService.getData();
   $scope.retainedData = retainedData;
@@ -108,7 +154,14 @@ console.log($scope.$storage.zip);
                 if(json.results[j].congress == '114'){
                  $scope.$storage.bill.push(json.results[j].bill_id); 
                 $scope.$storage.shortTitle.push(json.results[j].short_title);
-                $scope.$storage.billStuff.push(json.results[j].last_version.urls.pdf);
+                var billStuff = json.results[j].last_version.urls.pdf;
+                console.log(billStuff);
+                if(billStuff == null){
+                  $scope.$storage.billStuff.push('This individual has not sponsored any bills yet this session');
+                }
+                else{
+                $scope.$storage.billStuff.push(billStuff);
+                }
                 }
               }
             })
@@ -161,50 +214,8 @@ console.log($scope.$storage.zip);
     }
   })
 $scope.$storage.reset= true;
+$scope.zip = '';
 }
-  $scope.reset = function(){
-    $scope.zip = '';
-    $('.name').html('');
-    $('.mainCommittee').html('');
-    var firsties = '';
-    var lasties = '';
-    var party = '';
-    var id = '';
-    var contact = '';
-    var bills = ''; 
-    var shortTitle = '';
-    var link = '';
-    var committees= '';
-    var newID = '';
-    var totalP = '';
-    var entityTotal= [];
-    var entityType = [];
-    var id;
-    var lasties;
-    var firsties;
-    var contribNames = [];
-    var contribTotals= [];
-    var total = [];
-    var contribName = '';
-    var contribTotal = '';
-    $scope.$storage.entityType = '';
-    $scope.$storage.entityTotal = '';
-    $scope.$storage.contribNames= '';
-    $scope.$storage.contribTotals= '';
-    $scope.$storage.bill = [];
-    $scope.$storage.shortTitle = [];
-    $scope.$storage.committees = [];
-    $scope.$storage.billStuff = [];
-    $scope.$storage.hmm ='';
-    $scope.$storage.hmmP = '';
-    $scope.$storage.money = false;
-    $scope.$storage.bills = false;
-    $scope.$storage.comitStuff = false;
-    $scope.$storage.recents = false;
-    $scope.$storage.reset= false;
-    $scope.$storage.hidden = true;
-
-  }
   $scope.resetIt = function(){
 $localStorage.$reset();
 }

@@ -1,14 +1,22 @@
 
     <div class="all" ng-controller = "mainCtrl">
+             <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo center titleName">GovTracks</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        
+        <li class = "tabThing">
+            <form class = "inputForm" ng-submit = "search()">
+            <div class="input-field">
+        <input type="text" ng-model = "zip" class = "validate" id="zip" placeholder = "Enter your zip code to begin and hit enter">
+        </div>
+        </form></li>
+      </ul>
+    </div>
+  </nav>
+
             <div class="row topBar">
                 <div class="col-md-6 col-md-offset-2">
-        <form class = "inputForm" ng-show = "$storage.hidden">
-            <div class="input-field">
-        <input type="text" ng-model = "zip" class = "validate" id="zip">
-        <label for="zip"> Enter your zip code to begin and hit enter</label>
-        </div>
-        <button ng-click = "search()" id = "submitBtn"> Click it</button>
-        </form>
         </div>
         </div>
         <div class="info">
@@ -92,13 +100,6 @@
             </div>
             </div>
             </div>
-            <div class="row">
-                <div class="col-md-2 col-md-offset-5">
-            <div class="button" ng-show = "$storage.reset">
-                <button class="reset" ng-click = 'reset()'> Try again.</button>
-            </div>
-            </div>
-        </div>
         <div class="recents" ng-show = "$storage.recents">
             <h4> Recent Searches</h4>
             <div ng-repeat = "something in retainedData track by $index">
