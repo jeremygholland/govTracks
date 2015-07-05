@@ -22,6 +22,12 @@ if (Meteor.isClient) {
  })
 app.controller('mainCtrl', ['$scope', '$localStorage', '$timeout', '$meteor', 'newService', function($scope, $localStorage, $timeout, $meteor, newService){
 
+$(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+
 $scope.$storage = $localStorage.$default({
   zip : '',
   hidden: true,
@@ -50,8 +56,8 @@ $scope.$storage = $localStorage.$default({
 });
 console.log($scope.$storage.zip);
 
-  $scope.search = function(){
-    $('.name').html('');
+var resetStuff = function(){
+  $('.name').html('');
     $('.mainCommittee').html('');
     var firsties = '';
     var lasties = '';
@@ -91,12 +97,10 @@ console.log($scope.$storage.zip);
     $scope.$storage.reset= false;
     $scope.$storage.hidden = true;
     $scope.$storage.partyClass= '';
+}
 
-
-
-
-
-
+  $scope.search = function(){
+    resetStuff();
 
     $scope.$storage.zip = $scope.zip;
     newService.getData();
@@ -162,7 +166,6 @@ console.log($scope.$storage.zip);
                  $scope.$storage.bill.push(json.results[j].bill_id); 
                 $scope.$storage.shortTitle.push(json.results[j].short_title);
                 var billStuff = json.results[j].last_version.urls.pdf;
-                console.log(billStuff);
                 if($scope.$storage.bill.length < 1){
                   $scope.$storage.billStuff.push('This individual has not sponsored any bills yet this session');
                   alrert($scope.$storage.billStuff);
@@ -228,7 +231,9 @@ $scope.zip = '';
 $localStorage.$reset();
 }
 }])
+
 }
+
 
 if (Meteor.isServer) {
   Meteor.publish("recent", function () {
