@@ -27,7 +27,7 @@
         </div>
     </div>
         <div ng-show = "$storage.bills" class = "nameTopStuff hide-on-large-only card">
-            <div class="card-content">
+            <div class="card-content center">
                 <h3>{{$storage.firsties}} {{$storage.lasties}} <span class = "{{$storage.partyClass}}">({{$storage.party}})</span> {{$storage.state}} </h3>
             </div>
         </div>
@@ -67,7 +67,7 @@
             <div class="card z-depth-2 bidness hide-on-large-only" ng-show = "$storage.bills">
         <div class="row card-content">
              <div class="col s12 m6">
-                    <div class = "text-left">
+                    <div class = "center">
                         <h3 class = "bills text-center">Bills Sponsored</h3>
                         <div class="row center">
                         <div class="col s2">
@@ -75,7 +75,7 @@
                         <ul> <p> <a href="{{ba}}"> Bill </a> </p></ul>
                         </div>
                         </div>
-                        <div class="col s8 m8">
+                        <div class="col s10">
                         <div ng-repeat = "fa in $storage.shortTitle track by $index">
                             <ul><p class = "truncate">{{fa}} </p></ul>
                         </div>
@@ -118,7 +118,7 @@
                     <div class="col s8">
                     <li ng-repeat = "value in $storage.contribNames track by $index"> <p class = "truncate">{{value}} </p></li>
                     </div>
-                    <div class="col s4">
+                    <div class="col s6">
                         <li ng-repeat = "stuff in $storage.contribTotals track by $index"> <p class = "truncate">{{stuff | currency}} </p></li>
                     </div>
 
@@ -148,7 +148,7 @@
 
             <div class="containMoney card z-depth-2 hide-on-large-only" ng-show = "$storage.money">
             <div class="card-content">
-        <div class="row money">
+        <div class="row money center">
             <div>
                     <h5> Earned {{$storage.total | currency}} in the 2014 campaign cycle.</h5>
                 </div>
@@ -158,36 +158,36 @@
         </div>
         <div class="row">
         <div class="money">
-        <div class="col s6">
                 <div class="topContributors">
-                    <h3>Top Contributors in 2014 </h3>
-                    <div class="col s8">
+                    <div class="row">
+                    <h3 class = "center">Top Contributors in 2014 </h3>
+                    <div class="col s6 offset-s2 left">
                     <li ng-repeat = "value in $storage.contribNames track by $index"> <p class = "truncate">{{value}} </p></li>
                     </div>
-                    <div class="col s4">
+                    <div class="col s4 left">
                         <li ng-repeat = "stuff in $storage.contribTotals track by $index"> <p class = "truncate">{{stuff | currency}} </p></li>
                     </div>
                 </div>
             
                     
                 </div> 
+
                  </div>
-                 </div>
-                 <div class="row">
-                <div class="col s6">               
+             </div>
+
+                 <div class="row">             
                 <div class="entity">
-                    <h3>Interesting Data</h3>
-                    <div class="col s6">
+                    <h3 class = "center">Interesting Data</h3>
+                    <div class="col s6 offset-s2 left">
                         <li ng-repeat = "ughn in $storage.entityType track by $index">
                            <p class = "truncate"> {{ughn}}</p>
                         </li>
                     </div>
-                    <div class="col s6">
+                    <div class="col s4">
                         <li ng-repeat = "money in $storage.entityTotal track by $index">
                            <p class = "truncate"> {{money | currency}}</p>
                         </li>
                     </div>
-                </div>
                 </div>
             </div>
             </div>
@@ -195,6 +195,7 @@
 
        
         </div>
+
 
 
 

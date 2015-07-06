@@ -1,8 +1,15 @@
 @media only screen and (max-width: 990px){
-	body, .navbar-fixed{
-		width: 600px;
-		overflow-x:hidden;
+	body, nav{
+		width: 100%;
+		margin: 0px;
+    	padding: 0px;
+    	overflow-x: hidden; 
 	}
-
+	.inputForm{
+		width: 100vw;
+	}
+	p{
+		font-size: 1.5em;
+	}
 	
 	}

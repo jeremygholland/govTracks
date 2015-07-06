@@ -1,11 +1,14 @@
 #submitBtn{
 	display:none;
 }
-@media only screen and (max-width: 990px){
-	body{
-		max-width: 500px;
-	}
-	}
+.nameTopStuff{
+	color: black;
+	text-shadow: 2px 2px 2px white;
+	background: -webkit-linear-gradient(left, #f44336 , white, #2196f3); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #f44336, white, #2196f3); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #f44336, white, #2196f3);
+     background: linear-gradient(to right, #f44336 , white, #2196f3);
+}
 .topBar{background-color: #e8eaf6}
 .info{background-color: #e8eaf6;
 	height:100%}
@@ -20,6 +23,7 @@ nav{
      background: linear-gradient(to right, #f44336 , white, #2196f3);
      input::-webkit-input-placeholder{
 		color:white;
+		text-shadow: 2px 2px 2px black;
      }
 
 	input:focus{
@@ -54,7 +58,7 @@ nav{
      background: -moz-linear-gradient(right, white, #2196f3);
      background: linear-gradient(to right, white, #2196f3);
      h3{
-     	font-size: 3em;
+     	font-size: 2.6em;
      }
 }
 
