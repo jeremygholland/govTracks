@@ -133,14 +133,14 @@ var resetStuff = function(){
           var firstName = json.results[i].first_name;
           var lastName = json.results[i].last_name;
           var state = json.results[i].state;
-        $('.name').append("<div> <button id = "+district+"> "+district+"</button> </td> <td> <h4>"+firstName+" "+lastName+ "</h4> </div>");
+          var party = json.results[i].party;
+        $('.name').append("<div> <button id = "+district+"> "+district+"</button> </td> <td> <h4>"+firstName+" "+lastName+ " ("+party+")</h4> </div>");
         $('#'+district).click(function(event){
           $scope.$storage.hidden = false;
           var newSearch = (event.target.id);
           $.getJSON('http://congress.api.sunlightfoundation.com/legislators?state='+state+'&district='+newSearch+'&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function (json){
             var firsties = json.results[0].first_name;
             var lasties = json.results[0].last_name;
-            var party = json.results[0].party;
             console.log(party);
             if(party == 'R'){
             $scope.$storage.partyClass = "repub"

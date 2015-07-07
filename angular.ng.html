@@ -5,12 +5,13 @@
     <div class="nav-wrapper">
       <a class="brand-logo right searchedFor hide-on-med-and-down">GovTracks</a>
       <a class = "brand-logo center titleName hide-on-med-and-down"> {{$storage.firsties}} {{$storage.lasties}} <span class = "{{$storage.partyClass}}" ng-show = "$storage.bills">({{$storage.party}})</span> {{$storage.state}} </a>
+      <a class = "brand-logo right searchedFor searched4 hide-on-large-only"> GovTracks</a>
       <ul id="nav-mobile" class="left">
         
         <li class = "tabThing">
-            <form class = "inputForm" ng-submit = "search()">
+            <form class = "inputForm " ng-submit = "search()">
             <div class="input-field">
-        <input type="text" ng-model = "zip" class = "validate" id="zip" placeholder = "Enter your zip code to begin and hit enter">
+        <input type="text" ng-model = "zip" class = "validate searched4" id="zip" placeholder = "Enter your zip code to begin and hit enter">
         </div>
         </form></li>
       </ul>
@@ -66,30 +67,28 @@
 
             <div class="card z-depth-2 bidness hide-on-large-only" ng-show = "$storage.bills">
         <div class="row card-content">
-             <div class="col s12 m6">
-                    <div class = "center">
-                        <h3 class = "bills text-center">Bills Sponsored</h3>
-                        <div class="row center">
-                        <div class="col s2">
+             <div class="col s12">
+                        <h3 class = "bills center">Bills Sponsored</h3>
+                        <div class="row">
+                        <div class="col s1 offset-s3">
                             <div ng-repeat = "ba in $storage.billStuff track by $index">
-                        <ul> <p> <a href="{{ba}}"> Bill </a> </p></ul>
+                        <ul class = "weirdText"> <a href="{{ba}}"><p> Bill </p></a></ul>
                         </div>
                         </div>
-                        <div class="col s10">
+                        <div class="col s8">
                         <div ng-repeat = "fa in $storage.shortTitle track by $index">
-                            <ul><p class = "truncate">{{fa}} </p></ul>
+                            <ul class = "weirdText"> <p class = "truncate"> {{fa}} </p> </ul>
                         </div>
                         </div>
                         </div>
-                     </div>
                  </div>
                 </div>
+                <h3 class = "center">Committees</h3>
                 <div class="row">
                     <div class="col s11 offset-s1">
-            <div class="comitStuff text-left" ng-show = "$storage.comitStuff">
-                <h3>Committees</h3>
-                    <div class="mainCommittee" ng-repeat = "kd in $storage.committees track by $index">
-                       <li><p>{{kd}} </p></li>
+            <div ng-show = "$storage.comitStuff">
+                    <div ng-repeat = "kd in $storage.committees track by $index">
+                       <ul class = "weirdText leftComit"> <p>{{kd}}</p></ul>
                     </div>
             </div>
                     </div>
@@ -118,7 +117,7 @@
                     <div class="col s8">
                     <li ng-repeat = "value in $storage.contribNames track by $index"> <p class = "truncate">{{value}} </p></li>
                     </div>
-                    <div class="col s6">
+                    <div class="col s4">
                         <li ng-repeat = "stuff in $storage.contribTotals track by $index"> <p class = "truncate">{{stuff | currency}} </p></li>
                     </div>
 

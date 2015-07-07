@@ -5,11 +5,34 @@
     	padding: 0px;
     	overflow-x: hidden; 
 	}
+	nav{
+		height: 5.5%;
+	}
 	.inputForm{
 		width: 100vw;
+	}
+	input{
+		font-size: 1.3em;
 	}
 	p{
 		font-size: 1.5em;
 	}
-	
+	.comitStuff{
+		font-size: 1.5em;
+	}
+	.searchedFor{
+		margin-left: 30%;
+	}
+	input::-webkit-input-placeholder{
+	font-size: 1.3em;
+	}
+	.searched4{
+		font-size: 1.5em;
+	}
+	.weirdText{
+		font-size: 1.5em;
+	}
+	.leftComit{
+		margin-left: 25%
+	}
 	}
