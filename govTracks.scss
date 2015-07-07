@@ -76,6 +76,9 @@ nav{
 .repub{
 	color: #f44336;
 }
+.toolThing{
+	margin-left: 35%;
+}
 .topCard{
 	button{
 		color:black;
@@ -87,3 +90,13 @@ nav{
      background: -moz-linear-gradient(right, #f44336, white, #2196f3);
      background: linear-gradient(to right, #f44336 , white, #2196f3);
 }
+.topCard{
+a{
+		margin-left: 35%;
+	background: -webkit-linear-gradient(left, #F9DEDD , white, #DBE4EB); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #F9DEDD, white, #DBE4EB); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #F9DEDD, white, #DBE4EB);
+     background: linear-gradient(to right, #F9DEDD , white, #DBE4EB);
+     color: black;
+ }
+	}
