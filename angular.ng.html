@@ -22,7 +22,7 @@
         <div class="info" ng-show = "$storage.hidden">
         <div class="row card topCard">
             <div class="col-md-6 col-md-offset-4 col s6 offset-s3 card-content">
-               <a class="btn tooltipped z-depth-1 toolThing" data-position="bottom" data-customcss="rounded" data-delay="50" data-tooltip="Click in the top left to enter your zip code and click enter to begin your search!" ng-show = "instructions">Instructions!</a>
+                <a class="btn z-depth-1 toolThing" id = "instruction1" ng-show="instructions">Instructions!</a>
             <div class = "name text-center"> 
             </div>
             </div>
@@ -71,12 +71,12 @@
              <div class="col s12">
                         <h3 class = "bills center">Bills Sponsored</h3>
                         <div class="row">
-                        <div class="col s1 offset-s3">
+                        <div class="col s1 offset-s2">
                             <div ng-repeat = "ba in $storage.billStuff track by $index">
                         <ul> <a href="{{ba}}"><p> Bill </p></a></ul>
                         </div>
                         </div>
-                        <div class="col s8">
+                        <div class="col s8 offset-s1">
                         <div ng-repeat = "fa in $storage.shortTitle track by $index">
                             <ul> <p class = "truncate"> {{fa}} </p> </ul>
                         </div>
@@ -86,10 +86,10 @@
                 </div>
                 <h3 class = "center">Committees</h3>
                 <div class="row">
-                    <div class="col s9 offset-s3">
+                    <div class="col s10 offset-s2">
             <div ng-show = "$storage.comitStuff">
                     <div ng-repeat = "kd in $storage.committees track by $index">
-                       <ul class = "weirdText leftComit"> <p>{{kd}}</p></ul>
+                       <li class = "weirdText"> <p>{{kd}}</p></li>
                     </div>
             </div>
                     </div>
@@ -143,9 +143,6 @@
             </div>
             </div>
             </div>
-            <div class="instructions">
-                <a class="btn tooltipped z-depth-1 toolThing1" data-position="right" data-delay="50" data-customcss="rounded" data-tooltip="Click in the top left to enter your zip code and click enter to begin your search!" ng-show = "$storage.money">Instructions!</a>
-            </div>
             </div>
 
 
@@ -164,10 +161,10 @@
                 <div class="topContributors">
                     <div class="row">
                     <h3 class = "center">Top Contributors in 2014 </h3>
-                    <div class="col s6 offset-s2 left">
+                    <div class="col s7 left">
                     <li ng-repeat = "value in $storage.contribNames track by $index"> <p class = "truncate">{{value}} </p></li>
                     </div>
-                    <div class="col s4 left">
+                    <div class="col s4 offset-s1 left">
                         <li ng-repeat = "stuff in $storage.contribTotals track by $index"> <p class = "truncate">{{stuff | currency}} </p></li>
                     </div>
                 </div>
@@ -180,13 +177,13 @@
 
                  <div class="row">             
                 <div class="entity">
-                    <h3 class = "center">Interesting Data</h3>
-                    <div class="col s6 offset-s2 left">
+                    <h3 class = "center">Contributions by Industry</h3>
+                    <div class="col s7 left">
                         <li ng-repeat = "ughn in $storage.entityType track by $index">
                            <p class = "truncate"> {{ughn}}</p>
                         </li>
                     </div>
-                    <div class="col s4">
+                    <div class="col s4 offset-s1">
                         <li ng-repeat = "money in $storage.entityTotal track by $index">
                            <p class = "truncate"> {{money | currency}}</p>
                         </li>
@@ -194,9 +191,7 @@
                 </div>
             </div>
             </div>
-            <div class="instructions">
-                <a class="btn tooltipped z-depth-1 toolThing1" data-position="right" data-delay="50" data-tooltip="Click in the top left to enter your zip code and click enter to begin your search!" ng-show = "$storage.money">Instructions!</a>
-            </div>
+
             </div>
 
        

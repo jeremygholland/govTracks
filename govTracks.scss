@@ -57,7 +57,7 @@ nav{
 		color: white;
 	}
 	p{
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 	background: -webkit-linear-gradient(left, #f44336 , white); /* For Safari 5.1 to 6.0 */
  	 background: -o-linear-gradient(right, #f44336, white); /* For Opera 11.1 to 12.0 */
@@ -93,7 +93,7 @@ nav{
      	font-size: 2.6em;
      }
      .money{
-     	font-size: .8em;
+     	font-size: .4em;
      }
      p{
      	font-size: 2em;
@@ -101,16 +101,25 @@ nav{
      a{
      	font-size: 1.5em;
      	margin-left: 20%;
-     	background: -webkit-linear-gradient(left, #D6ECFD , #ADD3F2); /* For Safari 5.1 to 6.0 */
- 	 background: -o-linear-gradient(right, #D6ECFD, #ADD3F2); /* For Opera 11.1 to 12.0 */
-     background: -moz-linear-gradient(right, #D6ECFD, #ADD3F2);
-     background: linear-gradient(to right, #D6ECFD, #ADD3F2);
+     	background-color: transparent;
      color: black;
      margin-bottom: 2em;
 
      }
 }
-
+.toastClass, .toastClass1{
+	border-radius: 2em;
+	background-color: transparent;
+	color: black;
+	font-size: 1.35em;
+	text-shadow: 1px 1px 1px white;
+	box-shadow: none;	
+	vertical-align: middle;
+	text-align: right;
+	width: 90vw;
+	margin-top: 5%;
+	margin-left: 95%;
+}
 .card{
 	text-shadow: 1px 1px 1px white;
 	a{

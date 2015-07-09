@@ -26,7 +26,12 @@ $(document).ready(function(){
     $('.collapsible').collapsible({
       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
-     $('.tooltipped').tooltip({delay: 50});
+  $('#instruction1').one('click', function(){
+    Materialize.toast('First navigate to the top left corner of the screen.', 3500, 'toastClass1')
+    Materialize.toast('Then click on the search bar and enter your Zip code.', 4500, 'toastClass')
+    Materialize.toast('Next, press the "enter" or "go" key', 5500, 'toastClass')
+    Materialize.toast('Finally, select a congressman', 6500, 'toastClass')
+  })
   });
 $scope.$storage = $localStorage.$default({
   zip : '',

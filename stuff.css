@@ -13,6 +13,22 @@
 	margin-left: 2%;
 	height: 5vh;
 	}
+	.toastClass, .toastClass1{
+	border-radius: 2em;
+	background-color: transparent;
+	color: black;
+	font-size:4em;
+	text-shadow: 2px 2px 2px white;
+	box-shadow: none;	
+	vertical-align: text-top;
+	text-align: left;
+	width: 90vw;
+	margin-bottom: 15%;
+	margin-left: 5%;
+}
+#instruction1{
+	margin-top: 20vh;
+}
 
 
 	.comitStuff{
@@ -38,5 +54,8 @@
 		font-size: 3em;
 		background-color: white;
 		color: red;
+	}
+	.weirdText{
+		margin-left: 8%;
 	}
 	}
