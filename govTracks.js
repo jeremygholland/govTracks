@@ -21,7 +21,7 @@ if (Meteor.isClient) {
   };
  })
 app.controller('mainCtrl', ['$scope', '$localStorage', '$timeout', '$meteor', 'newService', function($scope, $localStorage, $timeout, $meteor, newService){
-
+$scope.instructions = true;
 $(document).ready(function(){
     $('.collapsible').collapsible({
       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
@@ -61,6 +61,7 @@ var resetStuff = function(){
     $('.mainCommittee').html('');
     var firsties = '';
     var lasties = '';
+    $scope.instructions = true;
     var party = '';
     var id = '';
     var contact = '';
@@ -101,6 +102,7 @@ var resetStuff = function(){
 
   $scope.search = function(){
     resetStuff();
+    $scope.instructions = false;
 
     $scope.$storage.zip = $scope.zip;
     newService.getData();

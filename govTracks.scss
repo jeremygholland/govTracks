@@ -45,13 +45,26 @@ nav{
 		color: white;
 	}
 	p{
-	font-size: 1.2em;
+	font-size: 1.5em;
 	}
 	background: -webkit-linear-gradient(left, #f44336 , white); /* For Safari 5.1 to 6.0 */
  	 background: -o-linear-gradient(right, #f44336, white); /* For Opera 11.1 to 12.0 */
      background: -moz-linear-gradient(right, #f44336, white);
      background: linear-gradient(to right, #f44336 , white);
 }
+.bidnessM{
+	a{
+		color: white;
+	}
+	p{
+		font-size: 2.5em;
+	}
+	background: -webkit-linear-gradient(left, #f44336 , white); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #f44336, white); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #f44336, white);
+     background: linear-gradient(to right, #f44336 , white);
+}
+
 .containMoney{
 	background: -webkit-linear-gradient(left, white , #2196f3); /* For Safari 5.1 to 6.0 */
  	 background: -o-linear-gradient(right, white, #2196f3); /* For Opera 11.1 to 12.0 */
@@ -59,6 +72,42 @@ nav{
      background: linear-gradient(to right, white, #2196f3);
      h3{
      	font-size: 2.6em;
+     }
+     a{
+     	margin-left: 20%;
+     	background: -webkit-linear-gradient(left, #D6ECFD , #ADD3F2); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #D6ECFD, #ADD3F2); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #D6ECFD, #ADD3F2);
+     background: linear-gradient(to right, #D6ECFD, #ADD3F2);
+     color: black;
+     margin-bottom: 2em;
+
+     }
+}
+.containMoneyM{
+	background: -webkit-linear-gradient(left, white , #2196f3); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, white, #2196f3); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, white, #2196f3);
+     background: linear-gradient(to right, white, #2196f3);
+     h3{
+     	font-size: 2.6em;
+     }
+     .money{
+     	font-size: .8em;
+     }
+     p{
+     	font-size: 2em;
+     }
+     a{
+     	font-size: 1.5em;
+     	margin-left: 20%;
+     	background: -webkit-linear-gradient(left, #D6ECFD , #ADD3F2); /* For Safari 5.1 to 6.0 */
+ 	 background: -o-linear-gradient(right, #D6ECFD, #ADD3F2); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(right, #D6ECFD, #ADD3F2);
+     background: linear-gradient(to right, #D6ECFD, #ADD3F2);
+     color: black;
+     margin-bottom: 2em;
+
      }
 }
 
@@ -78,8 +127,10 @@ nav{
 }
 .toolThing{
 	margin-left: 35%;
+	margin-top: 10%;
 }
 .topCard{
+	height: 100vh;
 	button{
 		color:black;
 	}
@@ -93,10 +144,9 @@ nav{
 .topCard{
 a{
 		margin-left: 35%;
-	background: -webkit-linear-gradient(left, #F9DEDD , white, #DBE4EB); /* For Safari 5.1 to 6.0 */
- 	 background: -o-linear-gradient(right, #F9DEDD, white, #DBE4EB); /* For Opera 11.1 to 12.0 */
-     background: -moz-linear-gradient(right, #F9DEDD, white, #DBE4EB);
-     background: linear-gradient(to right, #F9DEDD , white, #DBE4EB);
-     color: black;
+	background-color: transparent;
+	color: white;
+	text-shadow: 2px 2px 2px black;
+	font-size: 1.5em;
  }
 	}
