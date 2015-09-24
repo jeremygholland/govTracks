@@ -12,3 +12,6 @@ gsklee:ngstorage
 mrt:bootstrap-3
 fortawesome:fontawesome
 materialize:materialize
+lepozepo:accounting
+u2622:persistent-session
+iron:router

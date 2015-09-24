@@ -1,1 +1,10 @@
-/* CSS declarations go here */
+.theseCards{
+	width: 100%;
+	margin-bottom: 2%;
+}
+
+img{
+	width: 100vw;
+	opacity: .5;
+}
+
