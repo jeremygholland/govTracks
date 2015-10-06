@@ -86,7 +86,7 @@ if (Meteor.isClient) {
                     var shortTitle = [];
                     for (j = 0; j < json.results.length; j++) {
                         if (json.results[j].congress == '114') {
-                            shortTitle.push(json.results[j].short_title);
+                            shortTitle.push(json.results[j].bill_id);
                             var billInd = json.results[j].last_version.urls.pdf;
                             billArr.push(billInd);
                             Session.setPersistent('billArr', billArr);

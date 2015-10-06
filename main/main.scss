@@ -1,0 +1,56 @@
+.mainWrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    #titleCard {
+        background-color: #F9C644;
+        width: 40%;
+        display: flex;
+        color: white;
+        border: 2px solid white;
+        order: 1;
+        min-height: 50%;
+        align-items: center;
+        #flexedTitle {
+            margin: 0 auto;
+        }
+    }
+    #committees {
+        width: 60%;
+        order: 2;
+        color: white;
+        background-color: #C468A7;
+        max-height: 500px;
+        overflow: scroll;
+    }
+    #moneyEarned {
+        min-height: 50%;
+        height: 50%;
+        width: 60%;
+        order:3;
+        background: blue;
+        font-size: 5em;
+        overflow: scroll;
+        color: white;
+    }
+    #graphMoney {
+        min-height: 50%;
+        height: 45%;
+        width: 60%;
+        order: 5;
+    }
+    #twitterFeed {
+        width: 40%;
+        height: 500px;
+        background: green;
+        order: 4;
+    }
+}
+section{
+    border: 2px solid white;
+}
