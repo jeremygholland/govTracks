@@ -1,15 +1,30 @@
-<template name = "committeeSlides">
-     <div>
-                <h3>Committees</h3>
-                <div class="slider">
-                    <ul class="slides">
-                        {{#each committees}}
-                        <li><img src="http://lorempixel.com/580/250/nature/1">
-                            <div class="caption center-align">
-                                <h3> {{this}}</h3></div>
-                        </li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
+<template name="committeeSlides">
+    <div class="committeeSlides">
+        <div class="leftCommittees">
+            {{#if congressWoman}}
+            <h5> This Congresswoman serves on these committees: </h5>
+            {{else}}
+            <h5> This Congressman serves on these committees:</h5>
+            {{/if}}
+        </div>
+        <div class="slider rightCommittees">
+            <ul class="slides">
+                {{#each committees}}
+                <li>
+                    <div class="caption center-align">
+                        <h5> {{this}}</h5></div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $('.slider').slider({
+            interval: 2000,
+            height: 100,
+            indicators: false
+        });
+    });
+    </script>
 </template>
