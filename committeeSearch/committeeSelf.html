@@ -1,0 +1,23 @@
+<template name="committeeSlides">
+    <div>
+        <h3>Committees</h3>
+        <div class="slider">
+            <ul class="slides">
+                {{#each committees}}
+                <li><img src="http://www.finance.senate.gov/imo/media/image/A%20photo%20of%20the%20hearing%20room%20dais.jpg">
+                    <div class="caption center-align">
+                        <h3 class = "colorStuff"> {{this}}</h3></div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $('.slider').slider({
+            full_width: true,
+            Interval: 2000
+        });
+    });
+    </script>
+</template>

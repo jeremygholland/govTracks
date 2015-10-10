@@ -1,0 +1,15 @@
+<template name = "committeeSlides">
+     <div>
+                <h3>Committees</h3>
+                <div class="slider">
+                    <ul class="slides">
+                        {{#each committees}}
+                        <li><img src="http://lorempixel.com/580/250/nature/1">
+                            <div class="caption center-align">
+                                <h3> {{this}}</h3></div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+</template>

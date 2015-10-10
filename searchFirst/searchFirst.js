@@ -156,7 +156,9 @@ if (Meteor.isClient) {
               });
           })
             });
+  Router.go('/main')
           }
+
 
          });
 

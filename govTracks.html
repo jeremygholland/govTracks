@@ -5,10 +5,28 @@
 
 <body>
 
+<div class="navbar-fixed">
+             <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo left searchedFor hide-on-med-and-down">GovTracks</a>
+      <a class = "brand-logo left hide-on-large-only"> GovTracks</a>
+      <ul id="nav-mobile" class="right wooTry">
+          {{#if firstTime}}
+        <li class = "tabThing">
+            <form class = "test">
+  				<input type="text" name = "test" placeholder="Please enter a zip code?"/>
+			</form>
+</li>
+    {{else}}
+      <li><a href="/" class = "newSearch">New Search?</a></li>
+    {{/if}}
+        <li><a>Legilslation</a></li>
+        <li class = "right"><a>Finances</a></li>
+        <li class = "right"><a>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
-
-<form class = "test">
-          <input type="text" name = "test" placeholder="Please enter a zip code?"/>
-      </form>
 
 </body>

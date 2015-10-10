@@ -1,10 +1,15 @@
 <template name="main">
     <div class="mainWrap">
         <section id="titleCard">
-            <div id="flexedTitle">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/United_States_Capitol_-_west_front.jpg" alt="" class="heroImg"> 
+                <div id="flexedTitle">
                 <p>{{firsties}} {{lasties}} <span>({{party}})</span> {{state}}</p>
             </div>
         </section>
+        <section class="spacer">
+            {{> committeeSlides}}
+        </section>
+
         <section id="committees">
             {{> committeeSearch}}
         </section>
@@ -13,6 +18,8 @@
         </section>
         <section id="graphMoney">
             {{> money}}
+            <div class="background">
+            </div>
         </section>
         <section id="twitterFeed">
             <div>
@@ -20,5 +27,16 @@
             </div>
         </section>
     </div>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs"); </script>
+    <script>
+    ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");
+    </script>
 </template>
