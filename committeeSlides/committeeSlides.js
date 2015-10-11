@@ -21,7 +21,7 @@ if (Meteor.isClient) {
 
   });
 
-  Template.committeeSlides.onRendered = function(){
+  Template.committeeSlides.onRendered(function(){
     $(document).ready(function() {
         $('.slider').slider({
             interval: 2000,
@@ -30,7 +30,7 @@ if (Meteor.isClient) {
         });
     });
 
-}
+})
 }
 
 if (Meteor.isServer) {

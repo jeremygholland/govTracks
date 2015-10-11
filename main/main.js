@@ -54,8 +54,8 @@ if (Meteor.isClient) {
 
     });
 
-    Template.main.rendered = function() {
-      $(document).ready(function() {
+    Template.main.onRendered(function(){
+         $(document).ready(function() {
         $('#billTarget').html('');
         $('.slider').slider({
             interval: 2000,
@@ -68,7 +68,7 @@ if (Meteor.isClient) {
         $('#billTarget').append('<li><a href="'+billArr[i]+'"> '+shortTitle[i]+'</a></li>');
         }
     });
-}
+    })
 }
 
 if (Meteor.isServer) {

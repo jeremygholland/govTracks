@@ -11,7 +11,7 @@ if (Meteor.isClient) {
     });
 
 
-    Template.money.rendered = function(){
+    Template.money.onRendered(function(){
       var entityType = Session.get('entityType');
       var percentTotal = Session.get('percentTotal');
       var entityMoney = Session.get('entityMoney');
@@ -23,7 +23,7 @@ if (Meteor.isClient) {
       $('body').append('<style> .bar'+i+'::after{max-width:'+divTotal[i]+'%}</style>')
     }
 
-}
+})
 }
 
 if (Meteor.isServer) {
