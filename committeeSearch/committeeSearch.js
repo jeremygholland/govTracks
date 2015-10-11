@@ -3,7 +3,7 @@ if (Meteor.isClient) {
   // counter starts at 0
   Template.committeeSearch.helpers({
     billStuff: function(){
-      return Session.get('billStuff');
+      return Session.get('billArr');
     },
     shortTitle: function(){
     return  Session.get('shortTitle');
@@ -17,9 +17,6 @@ if (Meteor.isClient) {
 
   });
 
-  Template.committeeSearch.events({
-
-});
 }
 
 if (Meteor.isServer) {

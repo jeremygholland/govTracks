@@ -90,15 +90,15 @@ if (Meteor.isClient) {
                 $.getJSON('http://congress.api.sunlightfoundation.com/bills?sponsor_id=' + id + '&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function(json) {
                     var billArr = [];
                     var shortTitle = [];
+                    var billAll = []
                     for (j = 0; j < json.results.length; j++) {
                         if (json.results[j].congress == '114') {
                             shortTitle.push(json.results[j].bill_id);
                             var billInd = json.results[j].last_version.urls.pdf;
                             billArr.push(billInd);
-                            Session.setPersistent('billArr', billArr);
-                            Session.setPersistent('shortTitle', shortTitle);
                         }
                     }
+                    Session.setPersistent('billArr', billAll);
                 })
                 $.getJSON('http://congress.api.sunlightfoundation.com/committees?member_ids=' + id + '&apikey=8b48c930d6bb4552be3b0e6248efb463').then(function(json) {
                     var committees = [];

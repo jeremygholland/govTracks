@@ -54,13 +54,19 @@ if (Meteor.isClient) {
 
     });
 
-    Template.main.onRendered = function() {
+    Template.main.rendered = function() {
       $(document).ready(function() {
+        $('#billTarget').html('');
         $('.slider').slider({
             interval: 2000,
             height: 100,
             indicators: false
         });
+        var billArr = Session.get('billArr');
+        var shortTitle = Session.get('shortTitle');
+        for(i = 0; i <shortTitle.length; i ++){
+        $('#billTarget').append('<li><a href="'+billArr[i]+'"> '+shortTitle[i]+'</a></li>');
+        }
     });
 }
 }
