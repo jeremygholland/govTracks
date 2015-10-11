@@ -1,0 +1,31 @@
+<template name = "individual">
+	
+    <div class="committeeSlides">
+        <div class="leftCommittees">
+            {{#if congressWoman}}
+            <h5> This Congresswoman's top individual contributors are: </h5>
+            {{else}}
+            <h5> This Congressman's top individual contributors are:</h5>
+            {{/if}}
+        </div>
+        <div class="slider rightCommittees">
+            <ul class="slides">
+                {{#each contribNames}}
+                <li>
+                    <div class="caption center-align">
+                        <h5> {{this}}</h5></div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $('.slider').slider({
+            interval: 2000,
+            height: 100,
+            indicators: false
+        });
+    });
+    </script>
+</template>

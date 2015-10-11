@@ -36,7 +36,7 @@ h1,h2,h3{
 }
 .bar::after{
   content: '';
-  background: #2ecc71;
+  background: #1E824C;
   height: 30px;
   transition: 0.7s;
   display: block;
@@ -73,7 +73,8 @@ h1,h2,h3{
 
 
 .rightSide{
-  color: #2ECC71;
+  color: #1E824C;
   margin-right: 5%;
+  font-size: 1.25em;
   text-shadow: 1px 1px 1px white;
 }

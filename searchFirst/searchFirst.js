@@ -58,14 +58,19 @@ if (Meteor.isClient) {
         Session.setPersistent('showTwit', false);
         console.log(Session.get('showTwit'));
     };
+    Template.searchFirst.onRendered = function() {
+        Session.setPersistent('shortTitle', null);
+        Session.setPersistent('billArr', null)
+    };
     Template.searchFirst.events({
         'click button': function(event) {
+            $('#billTarget').html('');
             Session.setPersistent('firstSearchName', false);
             Session.setPersistent('firstTime', false);
             console.log(Session.get('firstSearchName'));
             setTimeout(function() {
                 location.reload();
-            }, 100);
+            }, 500);
             $('html').find('style').remove();
             $('.graph-cont').html('');
             var newSearch = (event.target.id);
@@ -161,7 +166,7 @@ if (Meteor.isClient) {
                     });
                 })
             });
-            Router.go('/main');
+    Router.go('/main');
         }
 
 

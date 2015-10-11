@@ -21,16 +21,6 @@ if (Meteor.isClient) {
 
   });
 
-  Template.committeeSlides.onRendered(function(){
-    $(document).ready(function() {
-        $('.slider').slider({
-            interval: 2000,
-            height: 100,
-            indicators: false
-        });
-    });
-
-})
 }
 
 if (Meteor.isServer) {

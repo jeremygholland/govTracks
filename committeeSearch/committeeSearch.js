@@ -13,13 +13,6 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.committeeSearch.rendered= function(){
-    var billArr = Session.get('billArr');
-        var shortTitle = Session.get('shortTitle');
-        for(i = 0; i <shortTitle.length; i ++){
-        $('#billTarget').append('<li><a href="'+billArr[i]+'"> '+shortTitle[i]+'</a></li>');
-        }
-      }
 
   }
 
