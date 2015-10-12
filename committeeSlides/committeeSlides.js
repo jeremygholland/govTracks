@@ -17,8 +17,12 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.body.helpers({
-
+  Template.committeeSlides.onRendered(function(){
+    $('.firstSlider').slider({
+            interval: 3000,
+            height: 100,
+            indicators: false,
+        });
   });
 
 }

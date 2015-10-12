@@ -55,12 +55,6 @@ if (Meteor.isClient) {
     });
 
     Template.main.onRendered(function(){
-
-        $('.slider').slider({
-            interval: 2000,
-            height: 100,
-            indicators: false
-        });
         $('#billTarget').html('');
         var billArr = Session.get('billArr');
         var shortTitle = Session.get('shortTitle');

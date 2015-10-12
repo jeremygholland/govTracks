@@ -7,6 +7,13 @@ if (Meteor.isClient) {
     },
   });
 
+    Template.individual.onRendered(function(){
+       $('.secondSlider').slider({
+            interval: 3000,
+            height: 100,
+            indicators: false,
+        });
+    });
 
   }
 

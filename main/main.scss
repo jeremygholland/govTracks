@@ -1,3 +1,7 @@
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .mainWrap {
     font-family: roboto;
     display: -webkit-box;
@@ -66,8 +70,10 @@
             margin: 0 auto;
         }
     }
-    #bottomSpacer{ width: 100%;
-        height: 15%;}
+    #bottomSpacer {
+        width: 100%;
+        height: 15%;
+    }
     #graphMoney {
         position: relative;
         display: flex;
@@ -79,18 +85,24 @@
         min-width: 300px;
         width: 100%;
         position: relative;
-        #graphImg{
-             opacity: .2;
+        #graphImg {
+            opacity: .2;
             position: absolute;
             height: 100%;
             width: 100%;
         }
-        .graph-cont{
+        .graph-cont {
             position: relative;
             margin: 0 auto;
         }
     }
     #twitterFeed {
+        #twitImg{
+            opacity: .2;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
         width: 100%;
         height: 70vh;
         min-height: 500px;
@@ -99,12 +111,20 @@
         min-width: 100%;
         width: 100%;
         position: relative;
-        .containTwitter{
+        .containTwitter {
             position: relative;
+            color: white;
+            h3{
+                color: white;
+            }
             margin: 0 auto;
-            .feed{
+            .feed {
                 position: absolute;
-                margin-left: 20%;
+                margin-left: 25%;
+                width: 100%;
+            }
+            h5 {
+                margin: 0 auto;
             }
         }
     }
@@ -119,10 +139,7 @@
 }
 
 nav {
-    height: 10%;
-    min-height: 10%;
     background-color: #2C3E50;
-    color: black;
     li {
         color: white;
     }

@@ -8,7 +8,7 @@
             <h5> This Congressman's top individual contributors are:</h5>
             {{/if}}
         </div>
-        <div class="slider rightCommittees">
+        <div class="rightCommittees slider secondSlider">
             <ul class="slides">
                 {{#each contribNames}}
                 <li>
@@ -19,13 +19,4 @@
             </ul>
         </div>
     </div>
-    <script>
-    $(document).ready(function() {
-        $('.slider').slider({
-            interval: 2000,
-            height: 100,
-            indicators: false
-        });
-    });
-    </script>
-</template>
+   </template>

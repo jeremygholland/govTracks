@@ -7,7 +7,7 @@
             <h5> This Congressman serves on these committees:</h5>
             {{/if}}
         </div>
-        <div class="slider rightCommittees">
+        <div class="slider rightCommittees firstSlider">
             <ul class="slides">
                 {{#each committees}}
                 <li>
@@ -18,13 +18,4 @@
             </ul>
         </div>
     </div>
-    <script>
-    $(document).ready(function() {
-        $('.slider').slider({
-            interval: 2000,
-            height: 100,
-            indicators: false
-        });
-    });
-    </script>
 </template>
