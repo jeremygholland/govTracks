@@ -16,7 +16,7 @@ html, body{
         background-color: #F9C644;
         width: 100%;
         font-weight: 200;
-        min-height: 100vh;
+        min-height: 70vh;
         height: 70vh;
         display: -webkit-box;
         display: -webkit-flex;
@@ -147,15 +147,16 @@ html, body{
         .containTwitter {
             position: relative;
             color: white;
+            width: 100%;
             h3{
                 font-weight: 100;
                 color: white;
             }
             margin: 0 auto;
             .feed {
-                position: absolute;
-                margin-left: 25%;
-                width: 100%;
+              width: 400px;
+  height: 50px;
+  margin: 0 auto;
             }
             h5 {
                 margin: 0 auto;

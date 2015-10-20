@@ -68,7 +68,7 @@ if (Meteor.isClient) {
             Session.setPersistent('firstSearchName', false);
             Session.setPersistent('firstTime', false);
             console.log(Session.get('firstSearchName'));
-            setTimeout(function() {
+            setInterval(function() {
                 location.reload();
             }, 900);
             $('html').find('style').remove();

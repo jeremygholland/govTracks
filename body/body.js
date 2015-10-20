@@ -70,7 +70,6 @@ if (Meteor.isClient) {
     },
     "click .newSearch": function(){
       Session.setPersistent('firstTime', true);
-      Router.go('/')
     },
   });
 }
