@@ -70,7 +70,7 @@ if (Meteor.isClient) {
             console.log(Session.get('firstSearchName'));
             setInterval(function() {
                 location.reload();
-            }, 900);
+            }, 50);
             $('html').find('style').remove();
             $('.graph-cont').html('');
             var newSearch = (event.target.id);

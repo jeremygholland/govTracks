@@ -1,184 +1,197 @@
-html, body{
-    max-width: 100%;
-    overflow-x: hidden;
-}
-.mainWrap {
-    font-family: roboto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    #titleCard {
-        background-color: #F9C644;
-        width: 100%;
-        font-weight: 200;
-        min-height: 70vh;
-        height: 70vh;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        color: white;
-        position: relative;
-        min-height: 50%;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        .heroImg {
-            height: 100%;
-            width: 100%;
-            opacity: .4;
-            position: absolute;
-        }
-        #flexedTitle {
-            position: relative;
-            font-size: 4em;
-            margin: 0 auto;
-        }
+@media only screen and (min-width: 1100px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
-    #committees {
-        width: 100%;
+    i{
         color: white;
-        background-color: #C468A7;
-        height: 70vh;
-        position: relative;
+    }
+    .mainWrap {
+        font-family: roboto;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-        width: 100%;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
         margin: 0 auto;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        font-size: 1.25em;
-        #billSectionImg {
-            opacity: .4;
-            position: absolute;
-            height: 100%;
+        #titleCard {
+            background-color: #F9C644;
             width: 100%;
-        }
-    }
-    #moneyEarned {
-        height: 20vh;
-        width: 100%;
-        background-color: #9E9E9E;
-        font-size: 2em;
-        font-weight: 100;
-        color: white;
-        position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-        width: 100%;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        p {
-            margin: 0 auto;
-        }
-    }
-    #bottomSpacer {
-        width: 100%;
-        height: 15%;
-    }
-    #graphMoney {
-        position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-        width: 100%;
-        height: 70vh;
-        min-height: 100%;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        min-width: 300px;
-        width: 100%;
-        position: relative;
-        #graphImg {
-            opacity: .2;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }
-        .graph-cont {
-            position: relative;
-            margin: 0 auto;
-        }
-    }
-    #twitterFeed {
-        #twitImg{
-            opacity: .2;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }
-        width: 100%;
-        height: 70vh;
-        min-height: 500px;
-        background-color: #C5EFF7;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        min-width: 100%;
-        width: 100%;
-        position: relative;
-        .containTwitter {
-            position: relative;
+            font-weight: 200;
+            min-height: 70vh;
+            height: 70vh;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
             color: white;
-            width: 100%;
-            h3{
-                font-weight: 100;
-                color: white;
+            position: relative;
+            min-height: 50%;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            .heroImg {
+                height: 100%;
+                width: 100%;
+                opacity: .4;
+                position: absolute;
             }
-            margin: 0 auto;
-            .feed {
-              width: 400px;
-  height: 50px;
-  margin: 0 auto;
-            }
-            h5 {
+            #flexedTitle {
+                position: relative;
+                font-size: 4em;
                 margin: 0 auto;
             }
         }
+        #committees {
+            width: 100%;
+            color: white;
+            background-color: #C468A7;
+            height: 70vh;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 1.25em;
+            #billSectionImg {
+                opacity: .4;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        #moneyEarned {
+            height: 20vh;
+            min-height: 20vh;
+            width: 100%;
+            background-color: #9E9E9E;
+            font-size: 2em;
+            font-weight: 100;
+            color: white;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            width: 100%;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            p {
+                margin: 0 auto;
+            }
+        }
+        #bottomSpacer {
+            width: 100%;
+            height: 15%;
+        }
+        #graphMoney {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            min-width: 300px;
+            width: 100%;
+            position: relative;
+            #graphImg {
+                opacity: .2;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .graph-cont {
+                position: relative;
+                margin: 0 auto;
+            }
+        }
+        #twitterFeed {
+            #twitImg {
+                opacity: .2;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            width: 100%;
+            height: 70vh;
+            min-height: 500px;
+            background-color: #C5EFF7;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            min-width: 100%;
+            width: 100%;
+            position: relative;
+            .containTwitter {
+                position: relative;
+                color: white;
+                width: 100%;
+                .feedError {
+                    width: 50%;
+                    margin: 0 auto;
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+                h3 {
+                    font-weight: 100;
+                    color: white;
+                }
+                margin: 0 auto;
+                .feed {
+                    height: 400px;
+                    width: 400px;
+                    height: 50px;
+                    margin: 0 auto;
+                }
+                h5 {
+                    margin: 0 auto;
+                }
+            }
+        }
+        .spacer {
+            width: 100%;
+            height: 15%;
+        }
+        .colorStuff {
+            color: white;
+            margin: 0 auto;
+        }
     }
-    .spacer {
-        width: 100%;
-        height: 15%;
-    }
-    .colorStuff {
-        color: white;
-        margin: 0 auto;
-    }
-}
-
-nav {
-    background-color: #2C3E50;
-    li {
-        color: white;
-    }
-    .searchedFor {
-        margin-left: 3%;
+    nav {
+        background-color: #2C3E50;
+        li {
+            color: white;
+        }
+        .searchedFor {
+            margin-left: 3%;
+        }
     }
 }

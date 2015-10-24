@@ -62,7 +62,6 @@ if (Meteor.isClient) {
             Session.setPersistent('lastName', lastName);
             Session.setPersistent('state', state);
             Session.setPersistent('party', party);
-            Router.go('/')
           }
         }
       });

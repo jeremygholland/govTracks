@@ -8,6 +8,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+d0minikk:materialize-meteor@1.95.1
 dburles:mongo-collection-instances@0.3.3
 ddp@1.1.0
 deps@1.0.7
@@ -37,7 +38,6 @@ launch-screen@1.0.2
 lepozepo:accounting@1.0.0
 livedata@1.0.13
 logging@1.0.7
-materialize:materialize@0.97.0
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:async@1.0.0
@@ -57,6 +57,7 @@ routepolicy@1.0.5
 session@1.1.0
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+standard-app-packages@1.0.5
 templating@1.1.1
 tracker@1.0.7
 u2622:persistent-session@0.4.1
