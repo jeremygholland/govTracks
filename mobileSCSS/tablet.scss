@@ -1,0 +1,350 @@
+@media (min-width: 481px) and (max-width: 780px) {
+   
+    #titleCard {
+        font-size: 1.5em;
+        
+        #flexedTitle {
+            font-size: 4em;
+        }
+    }
+    #committees {
+        font-size: 2.0em;
+    }
+    #moneyEarned {
+        font-size: 3em;
+    }
+    #twitterFeed {
+        .containTwitter {
+            .twitterTitle {
+                h3 {
+                    margin-top: 5%;
+                    font-weight: 100;
+                    color: white;
+                    font-size: 3em;
+                }
+            }
+            .feedError {
+                margin-top: 5vh;
+                p {
+                    font-size: 2em;
+                }
+            }
+            h5 {
+                margin: 0 auto;
+            }
+        }
+    }
+    nav {
+        background-color: #2C3E50;
+        .nav-wrapper {
+            a {
+                font-size: 3em;
+            }
+            .menuButton {
+                margin-left: 3%;
+            }
+            .mobileBar {
+                .sideNavTitle {
+                    font-size: 3em;
+                }
+                input {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+    .searchedFor {
+        margin-left: 3%;
+    }
+    .committeeSlides {
+        .leftCommittees {
+            h5 {
+                font-weight: 100;
+                margin-left: 5%;
+                font-size: 1.6em;
+                line-spacing: 1.2em;
+            }
+        }
+        .rightCommittees {
+            ul{
+                width: 100%;
+            li {
+                margin: 0 auto;
+                h5 {
+                    font-size: 1.6em;
+                    line-spacing: 1.2em;
+                }
+            }
+        }
+        }
+    }
+    .committeeSlides {
+        font-size: 1.25em;
+        background-color: #9E9E9E;
+        .leftCommittees {
+            h5 {
+                font-weight: 100;
+                margin-left: 5%;
+                font-size: 1.6em
+            }
+        }
+        .secondSlider {
+            li {
+                margin-top: 1em;
+                h5 {
+                    font-size: 1.6;
+                }
+            }
+        }
+    }
+    html,
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .graph-cont {
+        width: calc(100% - 40px);
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        max-height: 70vh;
+    }
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        color: #34495e;
+    }
+    .bar {
+        height: 50px;
+        max-width: 800px;
+        margin: 0 auto 10px auto;
+        line-height: 50px;
+        font-size: 2em;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        padding: 0 0 0 10px;
+        position: relative;
+    }
+    .bar::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        height: 50px;
+        top: 0;
+        z-index: -2;
+        background: #ecf0f1;
+    }
+    .bar::after {
+        content: '';
+        background: #1E824C;
+        height: 50px;
+        -webkit-transition: 0.7s;
+        transition: 0.7s;
+        display: block;
+        width: 100%;
+        -webkit-animation: bar-before 1 1.8s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .bar1::after {
+        max-width: 60%;
+    }
+    .bar2::after {
+        max-width: 72%;
+    }
+    .bar3::after {
+        max-width: 47%;
+    }
+    .bar4::after {
+        max-width: 20%;
+    }
+    @-webkit-keyframes bar-before {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 781px) and (max-width: 1080px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    #titleCard {
+        font-size: 1.5em;
+        
+        #flexedTitle {
+            font-size: 4em;
+        }
+    }
+    #committees {
+        font-size: 2.0em;
+    }
+    #moneyEarned {
+        font-size: 3em;
+    }
+    #twitterFeed {
+        .containTwitter {
+            .twitterTitle {
+                h3 {
+                    margin-top: 5%;
+                    font-weight: 100;
+                    color: white;
+                    font-size: 3em;
+                }
+            }
+            .feedError {
+                margin-top: 5vh;
+                p {
+                    font-size: 2em;
+                }
+            }
+            h5 {
+                margin: 0 auto;
+            }
+        }
+    }
+    nav {
+        background-color: #2C3E50;
+        .nav-wrapper {
+            a {
+                font-size: 3em;
+            }
+            .menuButton {
+                margin-left: 3%;
+            }
+            .mobileBar {
+                .sideNavTitle {
+                    font-size: 3em;
+                }
+                input {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+    .searchedFor {
+        margin-left: 3%;
+    }
+    .committeeSlides {
+        .leftCommittees {
+            h5 {
+                font-weight: 100;
+                margin-left: 5%;
+                font-size: 1.6em;
+                line-spacing: 1.2em;
+            }
+        }
+        .rightCommittees {
+            li {
+                margin-top: 1em;
+                h5 {
+                    font-size: 1.6em;
+                    line-spacing: 1.2em;
+                }
+            }
+        }
+    }
+    .committeeSlides {
+        font-size: 1.25em;
+        background-color: #9E9E9E;
+        .leftCommittees {
+            h5 {
+                font-weight: 100;
+                margin-left: 5%;
+                font-size: 1.6em
+            }
+        }
+        .secondSlider {
+            li {
+                margin-top: 1em;
+                h5 {
+                    font-size: 1.6;
+                }
+            }
+        }
+    }
+    html,
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .graph-cont {
+        width: calc(100% - 40px);
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        max-height: 70vh;
+    }
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        color: #34495e;
+    }
+    .bar {
+        height: 50px;
+        max-width: 800px;
+        margin: 0 auto 10px auto;
+        line-height: 50px;
+        font-size: 2em;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        padding: 0 0 0 10px;
+        position: relative;
+    }
+    .bar::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        height: 50px;
+        top: 0;
+        z-index: -2;
+        background: #ecf0f1;
+    }
+    .bar::after {
+        content: '';
+        background: #1E824C;
+        height: 50px;
+        -webkit-transition: 0.7s;
+        transition: 0.7s;
+        display: block;
+        width: 100%;
+        -webkit-animation: bar-before 1 1.8s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .bar1::after {
+        max-width: 60%;
+    }
+    .bar2::after {
+        max-width: 72%;
+    }
+    .bar3::after {
+        max-width: 47%;
+    }
+    .bar4::after {
+        max-width: 20%;
+    }
+    @-webkit-keyframes bar-before {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}

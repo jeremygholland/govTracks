@@ -42,6 +42,7 @@ if (Meteor.isClient) {
   Template.body.events({
     "submit .test": function (event) {
       Router.go('/')
+      $(".mobileBar").hide();
       Session.setPersistent('firstSearchName', true);
       event.preventDefault();
       var search = event.target.test.value;
